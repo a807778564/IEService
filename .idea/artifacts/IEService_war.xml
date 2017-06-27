@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="IEService:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <root id="archive" name="IEServices.war">
+      <element id="artifact" artifact-name="IEService:war exploded" />
+    </root>
+  </artifact>
+</component>
