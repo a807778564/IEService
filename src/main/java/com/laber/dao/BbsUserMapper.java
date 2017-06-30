@@ -49,8 +49,10 @@ public interface BbsUserMapper {
     int updateByPrimaryKey(BbsUser record);
 
     /*登录*/
-    BbsUser seclectUserByNameAndPass(@Param("userName")String userName,@Param("passWord") String passWord);
+    BbsUser seclectUserByNameAndPass(@Param("userName")String userName, @Param("passWord") String passWord);
 
+    /*注册*/
+    int insertUser(@Param("userName")String userName,@Param("passWord") String passWord,@Param("phone") String phone);
 
-
+    BbsUser selectUserInfoByToken(@Param("token")String token);
 }

@@ -1,11 +1,8 @@
 package com.laber.dao;
 
+import com.laber.model.BbsUser;
 import com.laber.model.BbsUserToken;
-import org.apache.ibatis.annotations.Delete;
-import org.apache.ibatis.annotations.Insert;
-import org.apache.ibatis.annotations.ResultMap;
-import org.apache.ibatis.annotations.Select;
-import org.apache.ibatis.annotations.Update;
+import org.apache.ibatis.annotations.*;
 
 public interface BbsUserTokenMapper {
     @Delete({
@@ -46,4 +43,8 @@ public interface BbsUserTokenMapper {
         "where id = #{id,jdbcType=INTEGER}"
     })
     int updateByPrimaryKey(BbsUserToken record);
+
+    BbsUserToken selectByUserId(@Param("userId")int userId);
+
+    int updateTokenByUserId(@Param("userId")int userId,@Param("token")String token);
 }
