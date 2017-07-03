@@ -59,6 +59,23 @@ public class IELoginController extends IEBaseController {
         return jsonModel;
     }
 
+    @RequestMapping("/loginOut")
+    @ResponseBody
+    public IEJsonModel doLoginOut(HttpServletRequest request){
+        String token = request.getParameter("token");
+        int code = userServices.deleteToken(token);
+        if (code>0){
+            jsonModel.code = 1;
+            jsonModel.message = "退出成功";
+            jsonModel.data = null;
+            return jsonModel;
+        }
+        jsonModel.code = 0;
+        jsonModel.message = "退出失败";
+        jsonModel.data = null;
+        return jsonModel;
+    }
+
     @RequestMapping("/register")
     @ResponseBody
     public IEJsonModel registerUser(HttpServletRequest request,HttpServletResponse response){

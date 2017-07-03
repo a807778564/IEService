@@ -50,5 +50,8 @@ public class BbsUserServicesImpl implements BbsUserServices {
         return tokenDao.updateTokenByUserId(userId,token);
     }
 
-
+    @Override
+    public int deleteToken(String token) {
+        return tokenDao.deleteToken(token);
+    }
 }

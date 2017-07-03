@@ -77,4 +77,8 @@
     UPDATE bbs_user_token SET token =#{token,jdbcType=VARCHAR} WHERE user_id = #{userId,jdbcType=INTEGER}
   </update>
 
+  <delete id="deleteToken">
+    DELETE FROM bbs_user_token WHERE token = #{token,jdbcType=VARCHAR}
+  </delete>
+
 </mapper>

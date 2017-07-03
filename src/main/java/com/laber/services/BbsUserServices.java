@@ -25,4 +25,7 @@ public interface BbsUserServices {
 
     /*根据token获取用户信息*/
     BbsUser selectUserInfoByToken(@Param("token")String token);
+
+    /*删除登录token信息*/
+    int deleteToken(@Param("token")String token);
 }

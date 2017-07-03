@@ -47,4 +47,6 @@ public interface BbsUserTokenMapper {
     BbsUserToken selectByUserId(@Param("userId")int userId);
 
     int updateTokenByUserId(@Param("userId")int userId,@Param("token")String token);
+
+    int deleteToken(@Param("token")String token);
 }
