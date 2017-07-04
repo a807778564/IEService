@@ -111,4 +111,8 @@
     SELECT u.Id,u.user_name,u.pass_word,u.phone_number,u.icon_url,u.email,u.sex,u.age FROM bbs_user_token AS t INNER JOIN bbs_user AS u ON t.user_id = u.Id WHERE t.token = #{token,jdbcType=VARCHAR}
   </select>
 
+  <update id="updateUserPassWord">
+    UPDATE  bbs_user SET pass_word = #{passWord,jdbcType=VARCHAR} WHERE phone_number = #{phone,jdbcType=VARCHAR}
+  </update>
+
 </mapper>

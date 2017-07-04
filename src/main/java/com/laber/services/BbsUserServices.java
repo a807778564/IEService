@@ -28,4 +28,7 @@ public interface BbsUserServices {
 
     /*删除登录token信息*/
     int deleteToken(@Param("token")String token);
+
+    /*修改密码*/
+    int updateUserPassWord(@Param("passWord") String passWord,@Param("phone") String phone);
 }

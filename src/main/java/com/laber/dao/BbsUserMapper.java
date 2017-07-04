@@ -54,5 +54,8 @@ public interface BbsUserMapper {
     /*注册*/
     int insertUser(@Param("userName")String userName,@Param("passWord") String passWord,@Param("phone") String phone);
 
+    /*根据token查询用户信息*/
     BbsUser selectUserInfoByToken(@Param("token")String token);
+
+    int updateUserPassWord(@Param("passWord") String passWord,@Param("phone") String phone);
 }

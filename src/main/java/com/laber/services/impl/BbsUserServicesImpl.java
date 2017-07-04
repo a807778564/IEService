@@ -32,6 +32,11 @@ public class BbsUserServicesImpl implements BbsUserServices {
         return userDao.selectUserInfoByToken(token);
     }
 
+    @Override
+    public int updateUserPassWord(String passWord, String phone) {
+        return userDao.updateUserPassWord(passWord,phone);
+    }
+
     @Autowired
     BbsUserTokenMapper tokenDao;
 

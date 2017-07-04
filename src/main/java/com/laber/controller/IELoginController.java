@@ -113,4 +113,23 @@ public class IELoginController extends IEBaseController {
         return jsonModel;
     }
 
+
+    @RequestMapping("/findPass")
+    @ResponseBody
+    public IEJsonModel findPassWord(HttpServletRequest request,HttpServletResponse response){
+        String phone = request.getParameter("phone");
+        String passWord = request.getParameter("passWord");
+        int code = userServices.updateUserPassWord(passWord,phone);
+        System.out.print("code = "+code);
+        if (code>0){
+            jsonModel.code = 1;
+            jsonModel.message = "修改成功！";
+            jsonModel.data = null;
+            return jsonModel;
+        }
+        jsonModel.code = 0;
+        jsonModel.message = "修改失败！";
+        jsonModel.data = null;
+        return jsonModel;
+    }
 }
